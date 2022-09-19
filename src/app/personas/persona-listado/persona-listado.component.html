@@ -1,0 +1,32 @@
+<br>
+<div class="container">
+  <td><button type="button" class="btn btn-primary" (click)="agregarPersona()">Nueva Persona</button></td>
+</div>
+<br>
+
+<div class="container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Apellido</th>
+        <th scope="col">Edad</th>
+        <th scope="col">Acciones</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let per of listado">
+        <th scope="row">{{per.id}}</th>
+        <td>{{per.nombre}}</td>
+        <td>{{per.apellido}}</td>
+        <td>{{per.edad}}</td>
+        <td><button type="button" class="btn btn-primary" (click)="modificar(per)">Modificar</button></td>
+        <td>
+          <app-persona-baja [persona]="per" (onEliminar)="cargarListado()"></app-persona-baja>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

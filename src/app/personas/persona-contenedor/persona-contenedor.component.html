@@ -1,0 +1,17 @@
+<div class="row">
+  <div class="col-md-8">
+    <app-persona-alta *ngIf="formVisible" 
+    (onConfirmar)="actualizarListado()" 
+    (onCancelar)="mostrarFormAlta(false)">
+    </app-persona-alta>
+
+    <app-persona-modificar *ngIf="formModVisible"></app-persona-modificar>
+  </div>
+  
+  <div class="col-md-4">
+    <app-persona-listado [listado]="listado" 
+    (onAgregar)="mostrarFormAlta(true)" 
+    (onModificar)="mostrarFormMod(true)">
+    </app-persona-listado>
+  </div>
+</div>
